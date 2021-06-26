@@ -1,6 +1,6 @@
 from app import app, config
 from flask import render_template, request, session, redirect
-app.secret_key = config['SECRET_KEY']
+# app.secret_key = config['SECRET_KEY']
 
 from app.model import predict_stag
 from app.employee import Employee, Gender, Industry, Profession, Traffic, Coach, GreyWage, Way

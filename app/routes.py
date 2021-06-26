@@ -1,6 +1,11 @@
 from app import app, config
 from flask import render_template, request, session, redirect
-app.secret_key = config['SECRET_KEY']
+import streamlit as st
+
+try:
+    app.secret_key = config['SECRET_KEY']
+except:
+    app.secret_key = st.SECRET_KEY
 
 from app.model import predict_stag
 from app.employee import Employee, Gender, Industry, Profession, Traffic, Coach, GreyWage, Way

@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from keras.models import Sequential, save_model, load_model
-from keras.layers.core import Dense
+from tensorflow.keras.models import Sequential, save_model, load_model
+from tensorflow.keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from app.employee import Employee
 

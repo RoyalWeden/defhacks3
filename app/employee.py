@@ -54,16 +54,19 @@ class Way(Enum):
 
     
 class Employee():
-    def __init__(self, gender: Gender, age: float, industry: Industry, profession: Profession, traffic: Traffic, coach: Coach, head_gender: Gender, greywage: GreyWage, way: Way, extraversion: float, independ: float, selfcontrol: float, anxiety: float, novator: float):
-        self.gender = gender.value
+    def __init__(self, email: str, firstname: str, lastname: str, gender: str, age: float, industry: str, profession: str, traffic: str, coach: str, head_gender: str, greywage: str, way: str, extraversion: float, independ: float, selfcontrol: float, anxiety: float, novator: float):
+        self.email = email
+        self.firstname = firstname
+        self.lastname = lastname
+        self.gender = gender
         self.age = age
-        self.industry = industry.value
-        self.profession = profession.value
-        self.traffic = traffic.value
-        self.coach = coach.value
-        self.head_gender = head_gender.value
-        self.greywage = greywage.value
-        self.way = way.value
+        self.industry = industry
+        self.profession = profession
+        self.traffic = traffic
+        self.coach = coach
+        self.head_gender = head_gender
+        self.greywage = greywage
+        self.way = way
         self.extraversion = extraversion
         self.independ = independ
         self.selfcontrol = selfcontrol
@@ -75,9 +78,9 @@ class Employee():
 
     def get_json(self):
         return {
-            'email': 'email@email.com',
-            'firstname': 'firstname',
-            'lastname': 'lastname',
+            'email': self.email,
+            'firstname': self.firstname,
+            'lastname': self.lastname,
             'gender': self.gender,
             'age': self.age,
             'industry': self.industry,

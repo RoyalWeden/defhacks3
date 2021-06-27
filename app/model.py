@@ -5,7 +5,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from tensorflow.keras.models import Sequential, save_model, load_model
 from tensorflow.keras.layers import Dense
 from sklearn.model_selection import train_test_split
-from app.employee import Employee
+from app import employee
 
 # Load data
 df = pd.read_csv('data/turnover.csv', encoding = "ISO-8859-1")
@@ -82,7 +82,7 @@ except:
     save_model(nn, 'data/models/saved_model')
 
 
-def predict_stag(employee: Employee):
+def predict_stag(employee: employee.Employee):
     # Preprocess inputs
     enc_arr = np.array(enc.transform([[employee.industry, employee.profession, employee.traffic, employee.way]]).toarray())
     sca_arr = scaler.transform([[employee.age, employee.extraversion, employee.independ, employee.selfcontrol, employee.anxiety, employee.novator]])

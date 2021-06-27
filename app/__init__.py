@@ -4,4 +4,4 @@ import os
 app = Flask(__name__)
 config = dict(os.environ)
 
-from app import routes
+from app import routes, model, database, employee

@@ -120,12 +120,32 @@ def apply():
 
 @app.route('/approve', methods=['GET'])
 def approve():
+    emplye = Employee(
+        request.args.get('email'),
+        request.args.get('firstname'),
+        request.args.get('lastname'),
+        request.args.get('gender'),
+        request.args.get('age'),
+        request.args.get('industry'),
+        request.args.get('profession'),
+        request.args.get('traffic'),
+        request.args.get('coach'),
+        request.args.get('head_gender'),
+        request.args.get('greywage'),
+        request.args.get('way'),
+        request.args.get('extraversion'),
+        request.args.get('independ'),
+        request.args.get('selfcontrol'),
+        request.args.get('anxiety'),
+        request.args.get('novator')
+    )
     employee_args = {
         'status': 'pending',
+        'employee': emplye.get_json(),
         'company_name': request.args.get('company_name'),
-        'stag': request.args.get('stag')
     }
     result = database.set_employee_status(employee_args, 'approved')
+    print(result)
     return redirect(url_for('home'))
 
 @app.route('/deny', methods=['GET'])
